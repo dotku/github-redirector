@@ -7,15 +7,6 @@ const handleShortPath = (path) => {
   return `${username}/${repo}/tree/main/${rest.join("/")}`;
 };
 
-const nextConfig = {
-  // async redirects() {
-  //   return [
-  //     {
-  //       from: "*",
-  //       to: `/`,
-  //     },
-  //   ];
-  // },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

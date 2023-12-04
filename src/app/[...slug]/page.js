@@ -4,6 +4,10 @@ export default async function Page({ params }) {
   console.log("params", params);
   const [username, repo, branchOrFilePath, ...rest] = params.slug;
 
+  if (!repo) {
+    return redirect("/");
+  }
+
   redirect(
     await genGitHubURL({
       username,
@@ -34,8 +38,7 @@ async function genGitHubURL({ username, repo, branchOrFilePath, rest }) {
     }
     return URL;
   } catch (error) {
-    console.error("error", error);
-
+    console.error("error", error.message);
     return `https://github.com/${username}/${repo}/tree/master/${branchOrFilePath}/${rest.join(
       "/"
     )}`;

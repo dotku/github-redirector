@@ -1,3 +1,18 @@
+.main h1 {
+  display: block;
+  margin: 24px 0;
+}
+
+.main h2 {
+  display: block;
+  margin: 16px 0;
+}
+
+.main h3 {
+  display: block;
+  margin: 8px 0;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -14,6 +29,7 @@
 .main code {
   border: 1px solid rgba(var(--card-border-rgb), 0.3);
   border-radius: 5px;
+  display: block;
   padding: 8px;
 }
 
