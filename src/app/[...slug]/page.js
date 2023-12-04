@@ -39,8 +39,10 @@ async function genGitHubURL({ username, repo, branchOrFilePath, rest }) {
     return URL;
   } catch (error) {
     console.error("error", error.message);
-    return `https://github.com/${username}/${repo}/tree/master/${branchOrFilePath}/${rest.join(
-      "/"
-    )}`;
+    return branchOrFilePath
+      ? `https://github.com/${username}/${repo}/tree/master/${branchOrFilePath}/${rest.join(
+          "/"
+        )}`
+      : `https://github.com/${username}/${repo}`;
   }
 }
